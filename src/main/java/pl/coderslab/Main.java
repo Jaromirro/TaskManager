@@ -56,6 +56,13 @@ public class Main {
 
                     break;
 
+                case "f":
+                    UserDao.findAll();
+
+
+
+                    break;
+
 
                 case "w":
                     System.out.println("Podaj id wiersza: ");
@@ -81,19 +88,20 @@ public class Main {
 
 
                     break;
+
                 case "u":
                     System.out.println("Podaj id wiersza: ");
-                    int id1 = input();
-                    System.out.println("Czy checesz usunac wiersz o id: " + id1 + " T/N?");
+                    User.setId(input());
+                    System.out.println("Czy checesz usunac wiersz o id: " + User.getId() + " T/N?");
                     String app = inputS();
-//
-//                    if("T".equals(app)){
-//                        UserDao..remove(connection,"cinemas", id1);
-//                    }else if("N".equals(app)){
-//                        System.out.println("STOP");
-//                    }
-//                    outputTable(connection);
-//                    break;
+
+                    if("T".equals(app)){
+                        UserDao.delete(User.getId());
+                    }else if("N".equals(app)){
+                        System.out.println("STOP");
+                    }
+                    break;
+
                 case "x":
                     exit = true;
                     break;

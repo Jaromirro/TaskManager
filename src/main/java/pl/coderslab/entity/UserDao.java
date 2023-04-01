@@ -4,7 +4,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import pl.coderslab.DbUtil;
 
 import java.sql.*;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class UserDao {
     private static final String CREATE_USER_QUERY =
@@ -12,7 +12,8 @@ public class UserDao {
     private static final String UPDATE_USER_QUERY =
             "UPDATE users SET email = ?, username = ?, password = ? WHERE id = ?;";
     private static final String DELETE_USER_QUERY =
-            "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
+            "DELETE FROM users WHERE id = ?";
+    private static final String FALL = "SELECT * FROM users";
     public static String hashPassword(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
@@ -67,8 +68,45 @@ public class UserDao {
         }
     }
 
-    public User[] findAll(){
-        return new User[0];
+    public static void delete(int userId) {
+        try (PreparedStatement statement =
+                     DbUtil.connect().prepareStatement(DELETE_USER_QUERY)) {
+            statement.setInt(1, userId);
+            statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static User[] findAll(){
+
+        try (PreparedStatement statement = DbUtil.connect().prepareStatement(FALL);
+             ResultSet resultSet = statement.executeQuery();) {
+            User[] users = new User[0];
+            while (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt(1));
+                user.setEmail(resultSet.getString(2));
+                user.setUserName(resultSet.getString(3));
+                user.setPassword(resultSet.getString(4));
+                users = addToArray(user, users);
+
+            }
+            return users;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+
+
+
+    }
+    private static User[] addToArray(User u, User[] users) {
+        User[] tmpUsers = Arrays.copyOf(users, users.length + 1); // Tworzymy kopię tablicy powiększoną o 1.
+        tmpUsers[users.length] = u; // Dodajemy obiekt na ostatniej pozycji.
+        return tmpUsers; // Zwracamy nową tablicę.
     }
 
 }

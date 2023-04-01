@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9df3b40-d711-4b80-8f3f-1156498f4343" name="Changes" comment="Pierwszy rel">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="b9df3b40-d711-4b80-8f3f-1156498f4343" name="Changes" comment="DOdana funkcja create, read i edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/DbUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/DbUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/entity/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/entity/UserDao.java" afterDir="false" />
@@ -94,7 +91,7 @@
       <workItem from="1680096486964" duration="13541000" />
       <workItem from="1680182984323" duration="4256000" />
       <workItem from="1680276739743" duration="8355000" />
-      <workItem from="1680323268479" duration="4072000" />
+      <workItem from="1680323268479" duration="14553000" />
     </task>
     <task id="LOCAL-00001" summary="Pierwszy rel">
       <created>1680017471154</created>
@@ -103,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680017471154</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="DOdana funkcja create, read i edit">
+      <created>1680327723010</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680327723010</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,7 +115,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pierwszy rel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pierwszy rel" />
+    <MESSAGE value="DOdana funkcja create, read i edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="DOdana funkcja create, read i edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
